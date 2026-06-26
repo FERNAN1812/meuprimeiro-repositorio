@@ -6,7 +6,7 @@ public class Calculadora {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         //calculo inicio Da calculadora
-
+      ;
         int escolha2 = 0;
 //Bloco que recebe o modo que o usuario ira ultilizar
         //caso o usuario erre e dgite uma letra
