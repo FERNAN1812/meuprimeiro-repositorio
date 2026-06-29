@@ -16,66 +16,59 @@ public class Calculadora2 {
         //Puxando do menu.U menu do usuario seleciona o modo que sera executado
 
         int escolhaMenu = Menu_Usuario.mostrar_menu();
-int a =0;
-int b =0;
+        int escolhamenuOp = 0;
+        int numero1 = 0;
+        int numero2 = 0;
         if (escolhaMenu == 1) {
             System.out.println("voce escolheu Argumentos");
 
-            if (args.length != 2){
+            if (args.length != 2) {
                 System.out.println("voce precisa informar dois numeros ");
                 return;
             }
+            escolhamenuOp = Menu_Operações.menuOperações();
 
-             a = Integer.parseInt(args[0]);
-             b = Integer.parseInt(args[1]);
-
+            numero1 = Integer.parseInt(args[0]);
+            numero2 = Integer.parseInt(args[1]);
         } else if (escolhaMenu == 2) {
             System.out.println("voce escolheu Scanner");
+            escolhamenuOp = Menu_Operações.menuOperações();
+            System.out.println("Digite um numero");
+            numero1 = entrada.nextInt();
+            System.out.println("Digite um segundo numero ");
+            numero2 = entrada.nextInt();
         }
         // Menu Operacoes com a seleçao das operacoes
-
-        int escolhamenuOp = Menu_Operações.menuOperações();
-
+        System.out.println("DEBUG FINAL:");
+        System.out.println("numero1 = " + numero1);
+        System.out.println("numero2 = " + numero2);
+        System.out.println("op = " + escolhamenuOp);
 
         switch (escolhamenuOp) {
             //Adicao
             case 1:
                 System.out.println("Voce escolheu adiçao");
-                System.out.println("Digite um numero");
-                int Numero1 = entrada.nextInt();
-                System.out.println("Digite um segundo numero");
-                int Numero2 = entrada.nextInt();
-                int resultado = Adicao.somar(Numero1, Numero2);
+                double  resultado = Adicao.somar(numero1, numero2);
                 System.out.println("Resultado " + resultado);
                 break;
+
             //Multiplicacao
             case 2:
                 System.out.println("Voce Escolheu Multiplicaçao");
-                System.out.println("Digite um numero");
-                int Numero3 = entrada.nextInt();
-                System.out.println("Digite um segundo numero");
-                int Numero4 = entrada.nextInt();
-                int resultadomultiplicacao = Multiplicacao.multiplicar(Numero3, Numero4);
+                double  resultadomultiplicacao = Multiplicacao.multiplicar(numero1, numero2);
                 System.out.println("Resultado " + resultadomultiplicacao);
                 break;
             //Subitracao
             case 3:
                 System.out.println("Voce escolheu Subitraçao");
-                System.out.println("Digite um numero");
-                int Numero5 = entrada.nextInt();
-                System.out.println("Digite um segundo numero");
-                int Numero6 = entrada.nextInt();
-                int resultadosubitracao = Subtracao.subitrair(Numero5, Numero6);
+                double  resultadosubitracao = Subtracao.subitrair(numero1, numero2);
                 System.out.println("Resultado " + resultadosubitracao);
                 break;
             //Divisao
             case 4:
                 System.out.println("Voce escolheu divisao");
-                System.out.println("Digite um numero");
-                int Numero7 = entrada.nextInt();
-                System.out.println("Digite um segundo numero");
-                int Numero8 = entrada.nextInt();
-                double resultadodivisao = Divisao.dividir(Numero7, Numero8);
+                ;
+                double resultadodivisao = Divisao.dividir(numero1, numero2);
                 System.out.println("Resultado " + resultadodivisao);
 
                 break;
